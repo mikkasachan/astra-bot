@@ -95,10 +95,12 @@ class GiveawayView(discord.ui.View):
         )
 
 
+
 @bot.event
 async def on_ready():
     print(f"Astra is online as {bot.user}!")
-    print("Slash commands are ready.")
+    await bot.tree.sync()
+    print("Slash commands synced!")
 
 
 @bot.event
